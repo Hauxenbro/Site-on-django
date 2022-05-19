@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% block title %}{{ title }}{% endblock %}
+{% block submenu %}{% show_categories %}{% endblock %}
+{% block content %}
+    {% for item in articles %}
+        <h1><a href="{{item.get_absolute_url}}" id="intro">{{item.title}}</a></h1>
+        <h2>author: Unknown</h2>
+        <p> {{item.content}} </p>
+        <div class="article_menu"><b>{{ item.updated_at|date:"Y-m-d H:i" }}</b> {{ item.views }} VIEWS</div>
+    {% endfor %}
+{% endblock %}

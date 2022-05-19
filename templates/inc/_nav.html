@@ -1,0 +1,13 @@
+<ul id="nav">
+    <li><a href="{% url 'home' %}" accesskey="h"><em>H</em>ome</a></li>
+    <li><a href="{% url 'author' %}" title="Об авторе блога" accesskey="a"><em>A</em>bout the author</a></li>
+    <li><a href="{% url 'email' %}" title="Связь со мной" accesskey="o">C<em>o</em>ntact</a></li>
+    {% if request.user.is_authenticated %}
+        <li><a href="{% url 'add_art' %}" title="Добавить новость" accesskey="o">Д<em>o</em>бавить новость</a></li>
+        <li> {{user.username}} </li>
+        <li> <a href="{% url 'logout' %}" title="Выйти">Выйти</a></li>
+    {% else %}
+        <li><a href="{% url 'login' %}" title="Войти" accesskey="o">L<em>o</em>gin</a></li>
+        <li><a href="{% url 'register' %}" title="Зарегистрироваться" accesskey="o">R<em>e</em>gister</a></li>
+    {% endif %}
+</ul>

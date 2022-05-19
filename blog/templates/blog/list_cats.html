@@ -1,0 +1,5 @@
+<ul class="submenu">
+    {% for item in categories %}
+        <li><a href="{{ item.get_absolute_url }}">{{ item.title }} {{item.cnt}}</a></li>
+    {% endfor %}
+</ul>

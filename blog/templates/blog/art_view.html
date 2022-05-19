@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1><a href="{{article_item.get_absolute_url}}" id="intro">{{article_item.title}}</a></h1>
+<h2>author: Unknown</h2>
+<p> {{article_item.content}} </p>
+<div class="article_menu"><b>{{ article_item.updated_at|date:"Y-m-d H:i" }}</b> {{ article_item.views }} VIEWS</div>
+{% endblock %}
